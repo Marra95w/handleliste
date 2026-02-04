@@ -22,7 +22,7 @@ function App() {
     <main>
       <h1>Handleliste</h1>
       <AddForm handle={handle} setHandle={setHandle} setHandleList={setHandleList}/>
-      <ShoppingList handleliste={handleList} setHandleList={setHandleList}/>
+      <ShoppingList handleListe={handleList} setHandleList={setHandleList}/>
     </main>
 
     
