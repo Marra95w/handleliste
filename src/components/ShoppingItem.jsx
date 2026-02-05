@@ -1,4 +1,4 @@
-export default function ShoppingItem({title, content, is, setHandleList}) {
+export default function ShoppingItem({title, content, setHandleList}) {
     
     return(
         <article className="todo-card">
