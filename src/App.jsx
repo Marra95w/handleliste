@@ -1,8 +1,8 @@
 import './App.css'
+import './style/shoppingcard.scss'
 import './style/layout.scss'
-import './style/style.scss'
-import ShoppingList from './components/ShoppingList'
 import AddForm from './components/AddForm'
+import ShoppingList from './components/ShoppingList'
 import { useState } from 'react'
 
 function App() {

@@ -7,7 +7,8 @@ export default function ShoppingItem({title, content, id,  setHandleList}) {
         <article className="shopping-card">
             <h3>{title}</h3>
             <p>{content}</p>
-            <button onClick={handleClick}>Done</button>
+            <button onClick={handleClick}></button>
+            <input type="checkbox" />
         </article>
     )
 }
