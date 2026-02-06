@@ -1,4 +1,4 @@
-import "..style/form.scss"
+import "../style/layout.scss"
 export default function AddForm({handle, setHandle, setHandleList}){
     const handleChange = (e) => {
         const {name, value} = e.target 
@@ -10,7 +10,7 @@ export default function AddForm({handle, setHandle, setHandleList}){
     const uniqId = crypto.randomUUID()
     setHandleList
     return(
-        <form className="todoform" onSumbit={handleClick}>
+        <form className="handleform" onSumbit={handleClick}>
             <label htmlFor="handleliste-tittel">Handleliste</label>
             <input type="text" name="title" id="shoppingtitle" placeholder="Egg..." onChange={handleChange} />
             
