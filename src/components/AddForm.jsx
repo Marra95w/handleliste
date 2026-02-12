@@ -2,25 +2,46 @@ import "../style/layout.scss"
 export default function AddForm({handle, setHandle, setHandleList}){
     const handleChange = (e) => {
         const {name, value} = e.target 
-        setHandle 
+        
+        setHandle((prev) => ({
+            ...prev, [name]: value
+        })) 
     }
 
-    const handleClick = (e) =>
+    const handleClick = (e) => {
         e.preventDefault()
-    const uniqId = crypto.randomUUID()
-    
-    
-    
-    return(
-        <form className="handleform" onSumbit={handleClick}>
-            <label htmlFor="handleliste-tittel">Vare</label>
-            <input type="text" name="title" id="shoppingtitle" placeholder="Egg..." onChange={handleChange} />
-            {/* <textarea name="content" id="handlecontent"></textarea> */}
-            
-            <label htmlFor="handleNumber">Antall</label>
-            <input type="number" value="qty" min="1" onChange={handleChange}/>
-            
+        const uniqId = crypto.randomUUID()
+        setHandleList((prev) => ([...prev, {id:uniqId,...handle}]))
+        console.log(handle)
 
+    // const removeHandle = (id) => {
+    //     id.preventDefault()
+    //     setHandleList((prev) => prev.filter(item => item.id !== id))
+        
+    // }
+    
+    }
+    return(
+
+        <form className="handleform" onSubmit={handleClick}>
+        
+            <label htmlFor="handleliste-tittel" id="vare">Vare
+            <input type="text" name="title"  placeholder="Egg..." onChange={handleChange} /> </label>
+          
+            
+            <label htmlFor="handleNumber" id="antall">Antall
+            <input type="number" placeholder="0"  min="1" max="99" onChange={handleChange}/> </label>
+      
+            <button>Legg til vare</button>
+
+{/*         Prøve å få inn denne på shoppingitem? 
+           <label htmlFor="fjerne-vare" id="fjerne">
+            <button onClick={() => removeHandle(handle.id)}>Fjern vare</button>
+           </label> */}
+        </form>
+    ) 
+  
+}
             {/* ===============================
             ===================================
             Fikk litt inspirasjon i denne videoen til å lage en formel om hvordan en øker verdien når en trykker på opp og ned, fortsatt inder arbeid
@@ -49,6 +70,5 @@ export default function AddForm({handle, setHandle, setHandleList}){
             https://chatgpt.com/share/6985fdfb-3500-8008-8b40-9ec202e27e66 
             ===================================
             ===================================*/}
-        </form>
-    )
-}
+    
+

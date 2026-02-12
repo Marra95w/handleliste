@@ -5,11 +5,12 @@ export default function ShoppingList({handleListe, setHandleList}){
         {/* <h3>Handleliste</h3> */}
         {/* {handleListe.map(item => <ShoppingItem key={item.id} id={item.id} title={item.title} setHandleList={setHandleList}/>)} */}
       
-      {handleListe.map(item => 
+      {handleListe.map((item) => 
       <ShoppingItem 
         key={item.id} 
-        id={item.id} 
         title={item.title} 
+        content={item.content}
+        id={item.id} 
         setHandleList={setHandleList}/>)}
     </section>
   )

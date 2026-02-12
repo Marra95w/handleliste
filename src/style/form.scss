@@ -1,8 +1,12 @@
 .handleform{
     display: flex;
     align-items: center;
-    flex-direction: 1 rem;
+    flex-direction: column;
     gap: 2rem;
+    padding: 2rem;
 
-    
+}
+.vare, .antall{
+    padding: 3rem;
+    border-radius: 5px;
 }

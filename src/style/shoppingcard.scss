@@ -1,7 +1,19 @@
+main{
+    
+}
+
 .shopping-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-color: whitesmoke;
     color: black;
-    padding: 1rem;
+    padding: 0;
     margin: 1rem;
-    width: 30%;
+    width: 100%;
+
+    .content{
+        display: flex;
+
+    }
 }

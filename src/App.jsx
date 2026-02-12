@@ -1,9 +1,10 @@
 import './App.css'
-import './style/shoppingcard.scss'
 import './style/layout.scss'
+import './style/shoppingcard.scss'
 import AddForm from './components/AddForm'
 import ShoppingList from './components/ShoppingList'
 import { useState } from 'react'
+import js from '@eslint/js'
 
 function App() {
   
