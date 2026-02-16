@@ -1,4 +1,11 @@
 export default function ShoppingItem({title, content, id,  setHandleList}) {
+      const handleChange = (e) => {
+        const {name, value} = e.target 
+        
+        setHandle((prev) => ({
+            ...prev, [name]: value
+        })) 
+    }
     const handleClick = () => {
         setHandleList((prev) => prev.filter(item => item.id !== id))
         console.log(id)
@@ -15,7 +22,7 @@ export default function ShoppingItem({title, content, id,  setHandleList}) {
                     </h3>
                     <p>
                     {content}
-                    <input id="content" type="number" placeholder=""  min="1" max="99" />
+                    <input id="content" type="number" placeholder="0"  min="1" max="99" onChange={handleChange}/>
                     </p>
                 </article>
             </section>    

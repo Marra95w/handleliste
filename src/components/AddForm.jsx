@@ -1,12 +1,14 @@
 import "../style/layout.scss"
 export default function AddForm({handle, setHandle, setHandleList}){
     const handleChange = (e) => {
-        const {name, value} = e.target 
+        const {name, value, type} = e.target 
         
         setHandle((prev) => ({
-            ...prev, [name]: value
+            ...prev, [name]: type === 'number' ? Number(value) : value
         })) 
     }
+   
+
 
     const handleClick = (e) => {
         e.preventDefault()
