@@ -18,11 +18,15 @@ export default function ShoppingItem({title, content, id,  setHandleList}) {
                 <article className="shopping-card">
                     <h3>
                         <input type="checkbox" onClick={handleClick}/>
+                        {/* får ikke en checked verdi i handlelisten - css? */}
                         {title}
                     </h3>
                     <p>
                     {content}
-                    <input id="content" type="number" placeholder="0"  min="1" max="99" onChange={handleChange}/>
+                    <input id="content" type="number" placeholder="0"  min="1" max="99" value={content} onChange={(e) => 
+                        setHandleList(prev => prev.map(item => item.id === id 
+                        ? {...item, content: e.target.value} : item))}/>
+                        {/* legge input verden i et annet komponent? -> får ikke lagret input verdi tall lagt til handlelisten */}
                     </p>
                 </article>
             </section>    

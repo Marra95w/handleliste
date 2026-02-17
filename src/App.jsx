@@ -12,6 +12,7 @@ function App() {
     {
       id: 0,
       title: "Melk", 
+      // skal det legges inn verdi her for å merke denne som checked?
     },
     {
       id: 1,

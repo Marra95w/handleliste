@@ -24,7 +24,7 @@ export default function AddForm({handle, setHandle, setHandleList}){
     
     }
     return(
-
+        <main>x
         <form className="handleform" onSubmit={handleClick}>
         
             <label htmlFor="handleliste-tittel" id="vare">Vare
@@ -35,12 +35,15 @@ export default function AddForm({handle, setHandle, setHandleList}){
             <input type="number" placeholder="0"  min="1" max="99" onChange={handleChange}/> </label>
       
             <button>Legg til vare</button>
+            <button>Slett vare</button>
+            {/* må legge til funksjon for å slette knappen */}
 
 {/*         Prøve å få inn denne på shoppingitem? 
            <label htmlFor="fjerne-vare" id="fjerne">
             <button onClick={() => removeHandle(handle.id)}>Fjern vare</button>
            </label> */}
         </form>
+       </main> 
     ) 
   
 }
