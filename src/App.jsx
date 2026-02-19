@@ -13,12 +13,14 @@ function App() {
       id: 0,
       title: "Melk", 
       content: 1,
+      checked: false,
       // skal det legges inn verdi her for å merke denne som checked?
     },
     {
       id: 1,
       title: "Egg", 
-      content: 12,
+      content: 8,
+      checked: true,
     },
   ]
 

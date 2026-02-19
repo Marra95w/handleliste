@@ -18,39 +18,38 @@ export default function AddForm({handle, setHandle, setHandleList}){
 
     const handleClick = (e) => {
         e.preventDefault()
-        const uniqId = crypto.randomUUID()
-        setHandleList((prev) => ([...prev, {id:uniqId,...handle}]))
-        console.log(handle)
+            const uniqId = crypto.randomUUID()
+            setHandleList((prev) => ([...prev, {id:uniqId,...handle}]))
+            console.log(handle)
     }
-    //================================
-    //https://stackoverflow.com/questions/71296593/delete-last-item-from-array-with-usestate
-    // prøver å lage en funksjon for å fjerne varer, fortsatt under arbeid
-    //================================
-     const removeHandle = (id) => {
-        id.preventDefault()
-        setHandle(prev.pop())
-        
-     }
-    
-    
+     
     return(
-        <main>
-           
-        <form className="handleform" onSubmit={handleClick}>
-
-            {/* denne printer ut html input felt */}
-            <label htmlFor="handleliste-tittel" id="vare">Vare
-            <input 
-            type="text" 
-            name="title"  
-            placeholder="Egg..." 
-            onChange={handleChange} /> </label>
-          
-            {/* legg til antall varer  */}
-            <label htmlFor="handleNumber" id="antall">Antall
-            <input type="number" placeholder="0"  min="0" max="99" onChange={handleChange}/> <button>Legg til vare</button></label>
-    
-        </form>
+        <main>   
+            <form className="handleform" onSubmit={handleClick}>
+                {/* denne printer ut html input felt */}
+                <label htmlFor="handleliste-tittel" id="vare">Vare
+                    <input 
+                        type="text" 
+                        name="title"  
+                        placeholder="Egg..." 
+                        onChange={handleChange} /> 
+                    </label>
+                {/* legg til antall varer  */}
+                <label 
+                    htmlFor="handleNumber" 
+                    id="antall"
+                >Antall 
+                    <input 
+                    type="number" 
+                    placeholder="0"  
+                    name="content"
+                    min="0" 
+                    max="99" 
+                    onChange={handleChange}
+                    /> 
+                    <button>Legg til vare</button>
+                </label>
+            </form>
        </main> 
     ) 
   
