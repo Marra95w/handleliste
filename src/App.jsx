@@ -1,5 +1,5 @@
 import './App.css'
-import './style/layout.scss'
+
 import './style/shoppingcard.scss'
 import AddForm from './components/AddForm'
 import ShoppingList from './components/ShoppingList'
@@ -12,12 +12,14 @@ function App() {
     {
       id: 0,
       title: "Melk", 
+      content: 1,
       // skal det legges inn verdi her for å merke denne som checked?
     },
     {
       id: 1,
       title: "Egg", 
-    }
+      content: 12,
+    },
   ]
 
   const [handleList, setHandleList] = useState(handleListe)
@@ -25,8 +27,8 @@ function App() {
   return (
     <main>
       <h1>Handleliste</h1>
-      <AddForm handle={handle} setHandle={setHandle} setHandleList={setHandleList}/>
-      <ShoppingList handleListe={handleList} setHandleList={setHandleList}/>
+      <AddForm handle={handle} setHandle={setHandle} setHandleList={setHandleList}/> 
+      <ShoppingList handleListe={handleList} setHandleList={setHandleList} />
     </main>
     
   )

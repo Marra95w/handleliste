@@ -1,10 +1,16 @@
-import "../style/layout.scss"
+
 export default function AddForm({handle, setHandle, setHandleList}){
+    //funksjon tar imot prps fra forelder
     const handleChange = (e) => {
-        const {name, value, type} = e.target 
+        //henter name og value fra input feltet
+        const {name, value} = e.target 
         
+        //oppdaterer handle state ved å bruke setHandle funksjonen, 
+        // og beholder tidligere verdier i handle objektet ved å spre det ut med ...prev, 
+        // og oppdaterer den spesifikke egenskapen som samsvarer med name til den nye value
         setHandle((prev) => ({
-            ...prev, [name]: type === 'number' ? Number(value) : value
+            ...prev, 
+            [name]: value
         })) 
     }
    
@@ -15,59 +21,40 @@ export default function AddForm({handle, setHandle, setHandleList}){
         const uniqId = crypto.randomUUID()
         setHandleList((prev) => ([...prev, {id:uniqId,...handle}]))
         console.log(handle)
-
-    // const removeHandle = (id) => {
-    //     id.preventDefault()
-    //     setHandleList((prev) => prev.filter(item => item.id !== id))
-        
-    // }
-    
     }
-    return(
-        <main>x
-        <form className="handleform" onSubmit={handleClick}>
+    //================================
+    //https://stackoverflow.com/questions/71296593/delete-last-item-from-array-with-usestate
+    // prøver å lage en funksjon for å fjerne varer, fortsatt under arbeid
+    //================================
+     const removeHandle = (id) => {
+        id.preventDefault()
+        setHandle(prev.pop())
         
-            <label htmlFor="handleliste-tittel" id="vare">Vare
-            <input type="text" name="title"  placeholder="Egg..." onChange={handleChange} /> </label>
-          
-            
-            <label htmlFor="handleNumber" id="antall">Antall
-            <input type="number" placeholder="0"  min="1" max="99" onChange={handleChange}/> </label>
-      
-            <button>Legg til vare</button>
-            <button>Slett vare</button>
-            {/* må legge til funksjon for å slette knappen */}
+     }
+    
+    
+    return(
+        <main>
+           
+        <form className="handleform" onSubmit={handleClick}>
 
-{/*         Prøve å få inn denne på shoppingitem? 
-           <label htmlFor="fjerne-vare" id="fjerne">
-            <button onClick={() => removeHandle(handle.id)}>Fjern vare</button>
-           </label> */}
+            {/* denne printer ut html input felt */}
+            <label htmlFor="handleliste-tittel" id="vare">Vare
+            <input 
+            type="text" 
+            name="title"  
+            placeholder="Egg..." 
+            onChange={handleChange} /> </label>
+          
+            {/* legg til antall varer  */}
+            <label htmlFor="handleNumber" id="antall">Antall
+            <input type="number" placeholder="0"  min="0" max="99" onChange={handleChange}/> <button>Legg til vare</button></label>
+    
         </form>
        </main> 
     ) 
   
 }
-            {/* ===============================
-            ===================================
-            Fikk litt inspirasjon i denne videoen til å lage en formel om hvordan en øker verdien når en trykker på opp og ned, fortsatt inder arbeid
-            
-            
-            // const handleChange = ({ minValue = 0, maxValue = 100}) => {
-            //     const [count, setCount] = useState()
-            
-        
-            // const handleCounter = () => {
-            //     if (count > maxValue) {
-            //         setCount((prev) => prev + 1)
-            //     }
-            // }
-
-            https://www.google.com/search?q=increase+a+number+in+a+button+react+file&rlz=1C5CHFA_
-            enNO1176NO1176&oq=increase+a+number+in+a+button+react+file&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRi
-            gAdIBCTI5NzY1ajBqN6gCCLACAQ&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:3911d7e2,vid:s8qMfDPGKxo,st:0
-            ===================================
-            ===================================*/}
-            
             
             {/* ================================
             ====================================
