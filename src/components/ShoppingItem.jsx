@@ -33,6 +33,7 @@ export default function ShoppingItem({title, content, id,  setHandleList}) {
                     </h3>
                         {content}
                     <input 
+                    
                         id="content" 
                         type="number" 
                         placeholder="0"  
